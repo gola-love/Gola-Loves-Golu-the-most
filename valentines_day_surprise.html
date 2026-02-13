@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Kajukatli ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: fadeIn 2s ease-in-out;
+      max-width: 420px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .couple-img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ff2e63;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 17px;
+      color: #333;
+    }
+
+    .heart {
+      font-size: 45px;
+      animation: beat 1s infinite;
+    }
+
+    .buttons {
+      margin-top: 15px;
+    }
+
+    button {
+      margin: 8px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #ff2e63;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e6004c;
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      position: relative;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: rgba(255,255,255,0.7);
+      animation: floatUp 6s linear infinite;
+      font-size: 24px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/0YbT9Y6rJfM?autoplay=1&loop=1&playlist=0YbT9Y6rJfM" frameborder="0" allow="autoplay"></iframe>
+
+  <div class="card">
+    <img src="golu-gola.jpg" alt="Gola and Kajukatli" class="couple-img">
+
+    <div class="heart">❤️</div>
+    <h1>Happy Valentine's Day, My Kajukatli (Golu) 💕</h1>
+    <p>
+      From your Gola ❤️<br><br>
+      You are my sweetest kajukatli, my happiness, my peace, and my forever.
+      Every moment with you feels magical and special.
+    </p>
+
+    <h3>Will you be my Valentine forever? 💍</h3>
+
+    <div class="buttons">
+      <button onclick="yesClicked()">Yes ❤️</button>
+      <button id="noBtn" onmouseover="moveNoButton()">No 😜</button>
+    </div>
+  </div>
+
+  <script>
+    function yesClicked() {
+      alert("Yayyy! Gola loves his Kajukatli forever and ever ❤️💍");
+    }
+
+    function moveNoButton() {
+      const button = document.getElementById('noBtn');
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }, 500);
+  </script>
+
+</body>
+</html>
